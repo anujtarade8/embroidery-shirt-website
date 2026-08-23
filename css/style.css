@@ -1,33 +1,25 @@
 body {
-    background-color: #f5f1ea;
+    background-color: #1f1f1f;
+    color: #eeeeee;
     font-family: Arial, sans-serif;
-    text-align: center;
-    padding: 50px;
+    font-size: 18px;
+    line-height: 1.7;
+    padding: 30px;
 }
 
 h1 {
-    color: #1c1c1c;
-    font-size: 50px;
+    color: #d4a373;
+    font-size: 45px;
+}
+
+h2 {
+    color: #d4a373;
+    font-size: 32px;
 }
 
 p {
-    color: #555;
-    font-size: 20px;
+    font-size: 18px;
 }
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f5f1ea;
-    color: #1c1c1c;
-}
-
-
 /* NAVBAR */
 
 .navbar {
@@ -224,4 +216,27 @@ body {
 
 .product-card button:hover {
     background-color: #8b5e3c;
+}
+/*About */
+body {
+    background-color: #f5efe6;
+    color: #333333;
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    line-height: 1.6;
+    padding: 30px;
+}
+
+h1 {
+    color: #7a3e48;
+    font-size: 42px;
+}
+
+h2 {
+    color: #7a3e48;
+    font-size: 30px;
+}
+
+p {
+    font-size: 18px;
 }
