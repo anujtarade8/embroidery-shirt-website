@@ -47,6 +47,8 @@
         <div class="products">
 
 
+            <!-- PRODUCT 1 -->
+
             <div class="product-card">
 
                 <img src="images/shirt1.jpg">
@@ -55,12 +57,20 @@
 
                 <p>₹999</p>
 
-                <button>
-                    View Product
+                <button onclick="addToCart(
+                    'Floral Print',
+                    999,
+                    'images/shirt1.jpg'
+                )">
+
+                    Add to Cart
+
                 </button>
 
             </div>
 
+
+            <!-- PRODUCT 2 -->
 
             <div class="product-card">
 
@@ -70,12 +80,20 @@
 
                 <p>₹1199</p>
 
-                <button>
-                    View Product
+                <button onclick="addToCart(
+                    'Mountain Scene',
+                    1199,
+                    'images/shirt2.jpg'
+                )">
+
+                    Add to Cart
+
                 </button>
 
             </div>
 
+
+            <!-- PRODUCT 3 -->
 
             <div class="product-card">
 
@@ -85,8 +103,14 @@
 
                 <p>₹1299</p>
 
-                <button>
-                    View Product
+                <button onclick="addToCart(
+                    'Spirit Valley',
+                    1299,
+                    'images/shirt3.jpg'
+                )">
+
+                    Add to Cart
+
                 </button>
 
             </div>
@@ -95,6 +119,9 @@
         </div>
 
     </section>
+
+
+    <script src="js/script.js"></script>
 
 </body>
 

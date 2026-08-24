@@ -318,6 +318,7 @@ p {
     color: white;
 
     border: none;
+
     border-radius: 5px;
 
     cursor: pointer;
@@ -357,14 +358,17 @@ p {
     padding: 14px 25px;
 
     background-color: #d4a373;
+
     color: #181818;
 
     border: none;
+
     border-radius: 5px;
 
     cursor: pointer;
 
     font-size: 16px;
+
     font-weight: bold;
 }
 

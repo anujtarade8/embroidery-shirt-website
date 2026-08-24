@@ -4,12 +4,35 @@ alert("Welcome to Thread & Stitch!");
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
 
+// ADD PRODUCT TO CART
+
+function addToCart(name, price, image) {
+
+    let product = {
+        name: name,
+        price: price,
+        image: image
+    };
+
+    cart.push(product);
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+
+    alert(name + " has been added to your cart!");
+}
+
+
 // DISPLAY CART
 
 function displayCart() {
 
     let cartItems = document.getElementById("cart-items");
+
     let cartTotal = document.getElementById("cart-total");
+
+    if (!cartItems) {
+        return;
+    }
 
     cartItems.innerHTML = "";
 
@@ -33,7 +56,6 @@ function displayCart() {
     cart.forEach(function(product, index) {
 
         total = total + product.price;
-
 
         cartItems.innerHTML += `
 
@@ -91,14 +113,12 @@ function checkout() {
         alert("Your cart is empty!");
 
         return;
-
     }
 
     window.location.href = "billing.html";
-
 }
 
 
-// DISPLAY CART WHEN PAGE LOADS
+// DISPLAY CART
 
 displayCart();
