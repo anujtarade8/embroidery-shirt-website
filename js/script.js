@@ -1,4 +1,3 @@
-alert("Welcome to Thread & Stitch!");
 // CART
 
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
