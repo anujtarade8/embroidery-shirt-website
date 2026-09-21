@@ -41,58 +41,43 @@
 
     <!-- LOGIN -->
 
-    <section class="login-section">
+   <section class="login-page">
 
-        <div class="login-box">
+    <div class="login-box">
 
-            <h1>Login</h1>
+        <h1>Welcome Back</h1>
 
-            <p>
-                Login to continue shopping.
-            </p>
+        <p>Login to continue to Thread & Stitch</p>
 
-
-            <form onsubmit="loginUser(event)">
-
-                <label>Email</label>
-
-                <input
-                    type="email"
-                    id="email"
-                    placeholder="Enter your email"
-                    required
-                >
-
-
-                <label>Password</label>
-
-                <input
-                    type="password"
-                    id="password"
-                    placeholder="Enter your password"
-                    required
-                >
-
-
-                <button type="submit">
-                    Login
-                </button>
-
-            </form>
-
-
-            <p class="or">
-                OR
-            </p>
-
-
-            <button onclick="guestLogin()" class="guest-button">
-                Continue as Guest
-            </button>
-
+        <div class="input-group">
+            <label>Email Address</label>
+            <input type="email" placeholder="Enter your email">
         </div>
 
-    </section>
+        <div class="input-group">
+            <label>Password</label>
+            <input type="password" placeholder="Enter your password">
+        </div>
+
+        <button class="login-button">
+            Login
+        </button>
+
+        <div class="login-divider">
+            OR
+        </div>
+
+        <button class="guest-button">
+            Continue as Guest
+        </button>
+
+        <div class="login-footer">
+            Your details are kept secure.
+        </div>
+
+    </div>
+
+</section>
 
 
     <script src="js/script.js"></script>
