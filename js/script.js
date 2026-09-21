@@ -1,123 +1,338 @@
-// CART
-
-let cart = JSON.parse(localStorage.getItem("cart")) || [];
-
-
-// ADD PRODUCT TO CART
+/* =========================================
+   ADD PRODUCT TO CART
+========================================= */
 
 function addToCart(name, price, image) {
 
-    let product = {
+    var cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+
+    var product = {
+
         name: name,
+
         price: price,
+
         image: image
+
     };
+
 
     cart.push(product);
 
+
     localStorage.setItem("cart", JSON.stringify(cart));
 
+
     alert(name + " has been added to your cart!");
+
 }
 
 
-// DISPLAY CART
+/* =========================================
+   DISPLAY CART
+========================================= */
 
 function displayCart() {
 
-    let cartItems = document.getElementById("cart-items");
+    var cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-    let cartTotal = document.getElementById("cart-total");
+    var cartItems = document.getElementById("cart-items");
+
+    var total = 0;
+
 
     if (!cartItems) {
+
         return;
+
     }
 
-    cartItems.innerHTML = "";
 
-    let total = 0;
+    cartItems.innerHTML = "";
 
 
     if (cart.length === 0) {
 
-        cartItems.innerHTML = `
-            <p style="text-align:center;">
-                Your cart is empty.
-            </p>
-        `;
+        cartItems.innerHTML =
+            "<p>Your cart is empty.</p>";
 
-        cartTotal.innerText = "0";
+        document.getElementById("cart-total").innerText = "0";
 
         return;
+
     }
 
 
-    cart.forEach(function(product, index) {
+    for (var i = 0; i < cart.length; i++) {
 
-        total = total + product.price;
-
-        cartItems.innerHTML += `
-
-            <div class="cart-item">
-
-                <img src="${product.image}">
-
-                <div class="cart-item-info">
-
-                    <h3>${product.name}</h3>
-
-                    <p>₹${product.price}</p>
-
-                </div>
-
-                <button
-                    class="remove-button"
-                    onclick="removeFromCart(${index})">
-
-                    Remove
-
-                </button>
-
-            </div>
-
-        `;
-
-    });
+        total = total + cart[i].price;
 
 
-    cartTotal.innerText = total;
+        cartItems.innerHTML +=
+
+            '<div class="cart-item">' +
+
+                '<img src="' + cart[i].image + '">' +
+
+                '<div>' +
+
+                    '<h3>' + cart[i].name + '</h3>' +
+
+                    '<p>₹' + cart[i].price + '</p>' +
+
+                    '<button onclick="removeFromCart(' + i + ')">' +
+
+                        'Remove' +
+
+                    '</button>' +
+
+                '</div>' +
+
+            '</div>';
+
+    }
+
+
+    document.getElementById("cart-total").innerText = total;
 
 }
 
 
-// REMOVE PRODUCT
+/* =========================================
+   REMOVE PRODUCT FROM CART
+========================================= */
 
 function removeFromCart(index) {
 
+    var cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+
     cart.splice(index, 1);
 
+
     localStorage.setItem("cart", JSON.stringify(cart));
+
 
     displayCart();
 
 }
 
 
-// CHECKOUT
+/* =========================================
+   DISPLAY BILLING INFORMATION
+========================================= */
 
-function checkout() {
+function displayBilling() {
 
-    if (cart.length === 0) {
+    var cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-        alert("Your cart is empty!");
+    var billingItems =
+        document.getElementById("billing-items");
+
+    var billingTotal =
+        document.getElementById("billing-total");
+
+
+    if (!billingItems) {
 
         return;
+
     }
 
-    window.location.href = "billing.html";
+
+    var total = 0;
+
+
+    billingItems.innerHTML = "";
+
+
+    for (var i = 0; i < cart.length; i++) {
+
+        total = total + cart[i].price;
+
+
+        billingItems.innerHTML +=
+
+            '<p>' +
+
+            cart[i].name +
+
+            ' - ₹' +
+
+            cart[i].price +
+
+            '</p>';
+
+    }
+
+
+    billingTotal.innerText = total;
+
 }
 
 
-// DISPLAY CART
+/* =========================================
+   LOGIN
+========================================= */
+
+function loginUser(event) {
+
+    event.preventDefault();
+
+
+    var email =
+        document.getElementById("email").value;
+
+
+    localStorage.setItem("user", email);
+
+
+    alert("Login successful!");
+
+
+    window.location.href = "index.html";
+
+}
+
+
+/* =========================================
+   GUEST LOGIN
+========================================= */
+
+function guestLogin() {
+
+    localStorage.setItem("user", "Guest");
+
+
+    alert("Continuing as Guest");
+
+
+    window.location.href = "index.html";
+
+}
+
+
+/* =========================================
+   SHOW QR CODE
+========================================= */
+
+function showQR() {
+
+    var qr =
+        document.getElementById("qr-section");
+
+
+    if (qr) {
+
+        qr.style.display = "block";
+
+    }
+
+}
+
+
+/* =========================================
+   HIDE QR CODE
+========================================= */
+
+function hideQR() {
+
+    var qr =
+        document.getElementById("qr-section");
+
+
+    if (qr) {
+
+        qr.style.display = "none";
+
+    }
+
+}
+
+
+/* =========================================
+   PLACE ORDER
+========================================= */
+
+function placeOrder(event) {
+
+    event.preventDefault();
+
+
+    var name =
+        document.getElementById("customer-name").value;
+
+
+    var email =
+        document.getElementById("customer-email").value;
+
+
+    var phone =
+        document.getElementById("customer-phone").value;
+
+
+    var address =
+        document.getElementById("customer-address").value;
+
+
+    var payment =
+        document.querySelector(
+            'input[name="payment"]:checked'
+        ).value;
+
+
+    var orderID =
+        "TS" + Math.floor(Math.random() * 100000);
+
+
+    localStorage.setItem("orderID", orderID);
+
+    localStorage.setItem("customerName", name);
+
+    localStorage.setItem("customerEmail", email);
+
+    localStorage.setItem("customerPhone", phone);
+
+    localStorage.setItem("customerAddress", address);
+
+    localStorage.setItem("paymentMethod", payment);
+
+
+    window.location.href = "thankyou.html";
+
+}
+
+
+/* =========================================
+   DISPLAY ORDER ID
+========================================= */
+
+function displayOrderID() {
+
+    var orderID =
+        localStorage.getItem("orderID");
+
+
+    var element =
+        document.getElementById("order-id");
+
+
+    if (element && orderID) {
+
+        element.innerText = orderID;
+
+    }
+
+}
+
+
+/* =========================================
+   RUN FUNCTIONS WHEN PAGE LOADS
+========================================= */
 
 displayCart();
+
+displayBilling();
+
+displayOrderID();

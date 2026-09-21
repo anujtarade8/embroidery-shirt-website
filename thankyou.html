@@ -1,7 +1,76 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Order Confirmed - Thread & Stitch</title><link rel="stylesheet" href="css/style.css"></head><body>
-<section class="thankyou"><h1>Order Confirmed!</h1><p>Thank you for shopping with Thread & Stitch.</p>
-<div class="bill-card"><p>Order ID: <strong id="orderId"></strong></p><p>Payment: <strong id="orderPayment"></strong></p><p>Total: <strong>₹<span id="orderTotal"></span></strong></p></div>
-<a class="shop-button" href="shop.html">Continue Shopping</a></section>
-<script>document.getElementById("orderId").innerText=localStorage.getItem("orderId")||"TS-0001";document.getElementById("orderPayment").innerText=localStorage.getItem("paymentMethod")||"COD";document.getElementById("orderTotal").innerText=localStorage.getItem("orderTotal")||"0";</script>
-</body></html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Order Confirmed - Thread & Stitch</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+
+<body>
+
+    <nav class="navbar">
+
+        <div class="logo">
+            THREAD & STITCH
+        </div>
+
+        <div class="nav-links">
+
+            <a href="index.html">Home</a>
+
+            <a href="shop.html">Shop</a>
+
+            <a href="about.html">About</a>
+
+            <a href="cart.html">Cart</a>
+
+        </div>
+
+    </nav>
+
+
+    <section class="thank-you">
+
+        <div class="thank-you-box">
+
+            <h1>
+                Order Confirmed!
+            </h1>
+
+            <p>
+                Thank you for shopping with Thread & Stitch.
+            </p>
+
+            <p>
+                Your order has been successfully placed.
+            </p>
+
+
+            <h3>
+                Order ID:
+                <span id="order-id"></span>
+            </h3>
+
+
+            <a href="shop.html" class="shop-button">
+                Continue Shopping
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>

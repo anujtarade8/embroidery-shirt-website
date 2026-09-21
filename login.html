@@ -1,7 +1,102 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Login - Thread & Stitch</title><link rel="stylesheet" href="css/style.css"></head><body>
-<nav class="navbar"><div class="logo">THREAD & STITCH</div><div class="nav-links"><a href="index.html">Home</a><a href="shop.html">Shop</a><a href="about.html">About</a><a href="cart.html">Cart</a></div></nav>
-<section class="login-page"><div class="login-box"><h1>Welcome Back</h1><p>Login to continue shopping.</p>
-<input type="text" id="username" placeholder="Username or Email"><input type="password" id="password" placeholder="Password">
-<button onclick="loginUser()">Login</button><div class="divider">OR</div><button class="guest-button" onclick="guestLogin()">Continue as Guest</button><p id="login-message"></p>
-</div></section><script src="js/script.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login - Thread & Stitch</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+            THREAD & STITCH
+        </div>
+
+        <div class="nav-links">
+
+            <a href="index.html">Home</a>
+
+            <a href="shop.html">Shop</a>
+
+            <a href="about.html">About</a>
+
+            <a href="cart.html">Cart</a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- LOGIN -->
+
+    <section class="login-section">
+
+        <div class="login-box">
+
+            <h1>Login</h1>
+
+            <p>
+                Login to continue shopping.
+            </p>
+
+
+            <form onsubmit="loginUser(event)">
+
+                <label>Email</label>
+
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Enter your email"
+                    required
+                >
+
+
+                <label>Password</label>
+
+                <input
+                    type="password"
+                    id="password"
+                    placeholder="Enter your password"
+                    required
+                >
+
+
+                <button type="submit">
+                    Login
+                </button>
+
+            </form>
+
+
+            <p class="or">
+                OR
+            </p>
+
+
+            <button onclick="guestLogin()" class="guest-button">
+                Continue as Guest
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>

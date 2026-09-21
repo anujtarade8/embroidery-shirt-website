@@ -16,6 +16,8 @@
 
 <body>
 
+    <!-- NAVBAR -->
+
     <nav class="navbar">
 
         <div class="logo">
@@ -32,16 +34,22 @@
 
             <a href="cart.html">Cart</a>
 
+            <a href="login.html">Login</a>
+
         </div>
 
     </nav>
 
 
+    <!-- SHOP -->
+
     <section class="shop">
 
         <h1>Our Collection</h1>
 
-        <p>Explore our embroidered shirts.</p>
+        <p>
+            Explore our embroidered shirts.
+        </p>
 
 
         <div class="products">
@@ -57,14 +65,8 @@
 
                 <p>₹999</p>
 
-                <button onclick="addToCart(
-                    'Floral Print',
-                    999,
-                    'images/shirt1.jpg'
-                )">
-
+                <button onclick="addToCart('Floral Print', 999, 'images/shirt1.jpg')">
                     Add to Cart
-
                 </button>
 
             </div>
@@ -80,14 +82,8 @@
 
                 <p>₹1199</p>
 
-                <button onclick="addToCart(
-                    'Mountain Scene',
-                    1199,
-                    'images/shirt2.jpg'
-                )">
-
+                <button onclick="addToCart('Mountain Scene', 1199, 'images/shirt2.jpg')">
                     Add to Cart
-
                 </button>
 
             </div>
@@ -103,14 +99,42 @@
 
                 <p>₹1299</p>
 
-                <button onclick="addToCart(
-                    'Spirit Valley',
-                    1299,
-                    'images/shirt3.jpg'
-                )">
-
+                <button onclick="addToCart('Spirit Valley', 1299, 'images/shirt3.jpg')">
                     Add to Cart
+                </button>
 
+            </div>
+
+
+            <!-- PRODUCT 4 -->
+
+            <div class="product-card">
+
+                <img src="images/shirt4.jpg">
+
+                <h3>Ocean Waves</h3>
+
+                <p>₹1099</p>
+
+                <button onclick="addToCart('Ocean Waves', 1099, 'images/shirt4.jpg')">
+                    Add to Cart
+                </button>
+
+            </div>
+
+
+            <!-- PRODUCT 5 -->
+
+            <div class="product-card">
+
+                <img src="images/shirt5.jpg">
+
+                <h3>Forest Spirit</h3>
+
+                <p>₹1399</p>
+
+                <button onclick="addToCart('Forest Spirit', 1399, 'images/shirt5.jpg')">
+                    Add to Cart
                 </button>
 
             </div>

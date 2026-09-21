@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Billing - Thread & Stitch</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+            THREAD & STITCH
+        </div>
+
+        <div class="nav-links">
+
+            <a href="index.html">Home</a>
+
+            <a href="shop.html">Shop</a>
+
+            <a href="about.html">About</a>
+
+            <a href="cart.html">Cart</a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- BILLING -->
+
+    <section class="billing">
+
+        <h1>Billing Details</h1>
+
+
+        <div class="billing-container">
+
+
+            <!-- CUSTOMER DETAILS -->
+
+            <div class="billing-form">
+
+                <h2>Customer Details</h2>
+
+
+                <form onsubmit="placeOrder(event)">
+
+                    <label>
+                        Full Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="customer-name"
+                        placeholder="Enter your name"
+                        required
+                    >
+
+
+                    <label>
+                        Email
+                    </label>
+
+                    <input
+                        type="email"
+                        id="customer-email"
+                        placeholder="Enter your email"
+                        required
+                    >
+
+
+                    <label>
+                        Phone Number
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="customer-phone"
+                        placeholder="Enter your phone number"
+                        required
+                    >
+
+
+                    <label>
+                        Address
+                    </label>
+
+                    <textarea
+                        id="customer-address"
+                        placeholder="Enter your complete address"
+                        required
+                    ></textarea>
+
+
+                    <h2>
+                        Payment Method
+                    </h2>
+
+
+                    <div class="payment-option">
+
+                        <label>
+
+                            <input
+                                type="radio"
+                                name="payment"
+                                value="upi"
+                                onclick="showQR()"
+                                checked
+                            >
+
+                            UPI / QR Code
+
+                        </label>
+
+
+                        <label>
+
+                            <input
+                                type="radio"
+                                name="payment"
+                                value="cod"
+                                onclick="hideQR()"
+                            >
+
+                            Cash on Delivery
+
+                        </label>
+
+                    </div>
+
+
+                    <!-- QR CODE -->
+
+                    <div id="qr-section">
+
+                        <h3>
+                            Scan to Pay
+                        </h3>
+
+                        <img
+                            src="images/upi-qr.png"
+                            class="qr-code"
+                        >
+
+                        <p>
+                            Scan this QR code using any UPI app.
+                        </p>
+
+                    </div>
+
+
+                    <button type="submit">
+                        Place Order
+                    </button>
+
+                </form>
+
+            </div>
+
+
+            <!-- ORDER SUMMARY -->
+
+            <div class="order-summary">
+
+                <h2>
+                    Order Summary
+                </h2>
+
+                <div id="billing-items">
+
+                </div>
+
+
+                <hr>
+
+
+                <h3>
+                    Total: ₹<span id="billing-total">0</span>
+                </h3>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>

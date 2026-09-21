@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,9 +10,13 @@
     <title>Thread & Stitch</title>
 
     <link rel="stylesheet" href="css/style.css">
+
 </head>
 
+
 <body>
+
+    <!-- NAVBAR -->
 
     <nav class="navbar">
 
@@ -29,10 +34,14 @@
 
             <a href="cart.html">Cart</a>
 
+            <a href="login.html">Login</a>
+
         </div>
 
     </nav>
 
+
+    <!-- HERO SECTION -->
 
     <section class="hero">
 
@@ -41,8 +50,8 @@
             <h1>Wear The Art.</h1>
 
             <p>
-                Premium embroidered shirts
-                made for everyday expression.
+                Premium embroidered shirts made for
+                everyday expression.
             </p>
 
             <a href="shop.html" class="shop-button">
@@ -54,6 +63,8 @@
     </section>
 
 
+    <!-- FEATURED PRODUCTS -->
+
     <section class="featured">
 
         <h2>Featured Collection</h2>
@@ -62,9 +73,60 @@
             Explore our most popular embroidered shirts.
         </p>
 
+
+        <div class="products">
+
+            <div class="product-card">
+
+                <img src="images/shirt1.jpg">
+
+                <h3>Floral Print</h3>
+
+                <p>₹999</p>
+
+                <button onclick="addToCart('Floral Print', 999, 'images/shirt1.jpg')">
+                    Add to Cart
+                </button>
+
+            </div>
+
+
+            <div class="product-card">
+
+                <img src="images/shirt2.jpg">
+
+                <h3>Mountain Scene</h3>
+
+                <p>₹1199</p>
+
+                <button onclick="addToCart('Mountain Scene', 1199, 'images/shirt2.jpg')">
+                    Add to Cart
+                </button>
+
+            </div>
+
+
+            <div class="product-card">
+
+                <img src="images/shirt3.jpg">
+
+                <h3>Spirit Valley</h3>
+
+                <p>₹1299</p>
+
+                <button onclick="addToCart('Spirit Valley', 1299, 'images/shirt3.jpg')">
+                    Add to Cart
+                </button>
+
+            </div>
+
+        </div>
+
     </section>
 
-<script src="js/script.js"></script>
+
+    <script src="js/script.js"></script>
+
 </body>
 
 </html>
