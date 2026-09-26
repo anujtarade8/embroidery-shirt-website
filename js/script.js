@@ -327,6 +327,8 @@ displayCart();
 displayBilling();
 
 displayOrderID();
+
+displayUser();
 /* =========================================
    APPLY COUPON
 ========================================= */
@@ -379,4 +381,27 @@ function applyCoupon() {
 
     localStorage.setItem("discount", discount);
     localStorage.setItem("finalTotal", finalTotal);
+}
+/* =========================================
+   DISPLAY SAVED USER
+========================================= */
+
+function displayUser() {
+
+    var user = localStorage.getItem("user");
+    var status = document.getElementById("user-status");
+
+    if (!status) {
+        return;
+    }
+
+    if (user) {
+
+        status.innerText = "Welcome, " + user;
+
+    } else {
+
+        status.innerText = "You are not logged in.";
+
+    }
 }
