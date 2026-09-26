@@ -71,15 +71,44 @@
 
             <!-- ORDER SUMMARY -->
             <div class="order-summary">
-                <h2>Order Summary</h2>
-                <div id="billing-items">
-                    <!-- Items will be injected here by JS -->
-                </div>
-                <hr>
-                <h3>Total: ₹<span id="billing-total">0</span></h3>
-            </div>
 
-        </div>
+    <h2>Order Summary</h2>
+
+    <div id="billing-items"></div>
+
+    <hr>
+
+    <h3>
+        Subtotal: ₹<span id="billing-total">0</span>
+    </h3>
+
+    <div class="coupon-section">
+
+        <h3>Have a Coupon?</h3>
+
+        <input
+            type="text"
+            id="coupon-code"
+            placeholder="Enter coupon code"
+        >
+
+        <button type="button" onclick="applyCoupon()">
+            Apply Coupon
+        </button>
+
+        <p id="coupon-message"></p>
+
+    </div>
+
+    <h3>
+        Discount: ₹<span id="discount">0</span>
+    </h3>
+
+    <h2>
+        Final Total: ₹<span id="final-total">0</span>
+    </h2>
+
+</div>
     </section>
     
     <script src="js/script.js"></script>
