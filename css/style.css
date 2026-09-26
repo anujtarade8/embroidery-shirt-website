@@ -927,3 +927,45 @@ p {
 .payment-method input {
     margin-right: 10px;
 }
+/* =========================================
+   COUPON SECTION
+========================================= */
+
+.coupon-section {
+    margin-top: 25px;
+    padding-top: 15px;
+    border-top: 1px solid #dddddd;
+}
+
+.coupon-section h3 {
+    color: #183A2A;
+    font-size: 18px;
+}
+
+.coupon-section input {
+    width: 100%;
+    padding: 12px;
+    box-sizing: border-box;
+    border: 1px solid #cccccc;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+
+.coupon-section button {
+    width: 100%;
+    padding: 10px;
+    background-color: #183A2A;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.coupon-section button:hover {
+    background-color: #8b5e3c;
+}
+
+#coupon-message {
+    font-size: 14px;
+    margin-top: 10px;
+}
