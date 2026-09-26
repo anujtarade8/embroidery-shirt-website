@@ -405,3 +405,16 @@ function displayUser() {
 
     }
 }
+/* =========================================
+   LOGOUT
+========================================= */
+
+function logoutUser() {
+
+    localStorage.removeItem("user");
+    localStorage.removeItem("loginStatus");
+
+    alert("You have been logged out.");
+
+    window.location.href = "index.html";
+}
