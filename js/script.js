@@ -180,21 +180,15 @@ function loginUser(event) {
 
     event.preventDefault();
 
-
-    var email =
-        document.getElementById("email").value;
-
+    var email = document.getElementById("email").value;
 
     localStorage.setItem("user", email);
-
+    localStorage.setItem("loginStatus", "loggedIn");
 
     alert("Login successful!");
 
-
     window.location.href = "index.html";
-
 }
-
 
 /* =========================================
    GUEST LOGIN
@@ -203,15 +197,12 @@ function loginUser(event) {
 function guestLogin() {
 
     localStorage.setItem("user", "Guest");
-
+    localStorage.setItem("loginStatus", "guest");
 
     alert("Continuing as Guest");
 
-
     window.location.href = "index.html";
-
 }
-
 
 /* =========================================
    SHOW QR CODE
