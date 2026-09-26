@@ -287,7 +287,11 @@ function placeOrder(event) {
 
     localStorage.setItem("customerAddress", address);
 
-    localStorage.setItem("paymentMethod", payment);
+    var discount = localStorage.getItem("discount") || 0;
+var finalTotal = localStorage.getItem("finalTotal") || 0;
+
+localStorage.setItem("discount", discount);
+localStorage.setItem("finalTotal", finalTotal);
 
 
     window.location.href = "thankyou.html";
