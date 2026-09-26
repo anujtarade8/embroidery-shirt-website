@@ -336,3 +336,56 @@ displayCart();
 displayBilling();
 
 displayOrderID();
+/* =========================================
+   APPLY COUPON
+========================================= */
+
+function applyCoupon() {
+
+    var coupon = document.getElementById("coupon-code").value;
+    var message = document.getElementById("coupon-message");
+
+    coupon = coupon.toUpperCase();
+
+    var cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    var total = 0;
+
+    for (var i = 0; i < cart.length; i++) {
+        total = total + cart[i].price;
+    }
+
+    var discount = 0;
+
+    if (coupon === "THREAD10") {
+
+        discount = total * 0.10;
+        message.innerText = "10% coupon applied!";
+
+    } else if (coupon === "STITCH20") {
+
+        discount = total * 0.20;
+        message.innerText = "20% coupon applied!";
+
+    } else if (coupon === "WELCOME15") {
+
+        discount = total * 0.15;
+        message.innerText = "15% coupon applied!";
+
+    } else {
+
+        message.innerText = "Invalid coupon code.";
+        discount = 0;
+    }
+
+    var finalTotal = total - discount;
+
+    document.getElementById("discount").innerText =
+        Math.round(discount);
+
+    document.getElementById("final-total").innerText =
+        Math.round(finalTotal);
+
+    localStorage.setItem("discount", discount);
+    localStorage.setItem("finalTotal", finalTotal);
+}
